@@ -1,7 +1,7 @@
 from datetime import datetime
 from src.config import SERVER_TIMEZONE
 
-from src.core.utils import get_server_date
+from src.core.service import get_server_date
 
 
 def test_get_server_date():

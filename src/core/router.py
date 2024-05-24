@@ -4,16 +4,15 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 
 from src.config import get_logger
-from src.core.deps import get_response_schema
-from src.core.schemas import CoreResponseSchema
+from src.core.schema import CoreResponseSchema
 
 core_router = APIRouter()
+resp_data = CoreResponseSchema()
 
 
 @core_router.get("/")
 def home(
     logger: Logger = Depends(get_logger),
-    resp_data: CoreResponseSchema = Depends(get_response_schema),
 ):
     logger.info("GET / - welcome")
     resp_data.message = "Welcome to FastAPI!"
@@ -23,7 +22,6 @@ def home(
 @core_router.get("/heartbeat")
 def heartbeat(
     logger: Logger = Depends(get_logger),
-    resp_data: CoreResponseSchema = Depends(get_response_schema),
 ):
     logger.info("GET /heartbeat - pong")
     resp_data.message = "PONG!"

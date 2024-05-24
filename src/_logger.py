@@ -3,7 +3,7 @@ import logging
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from src.core.utils import get_server_date
+from src.core.service import get_server_date
 
 
 class TextFileLogHandler(logging.Handler):
@@ -32,7 +32,7 @@ def get_logger_dev(log_dir: str, buffer_size: int = 10) -> logging.Logger:
     _formatter = logging.Formatter(
         '[%(asctime)s - %(levelname)s] - %(filename)s->%(funcName)s():Line %(lineno)d - "%(message)s"\n'
     )
-    file_path = f"{log_dir}/{get_server_date()}.txt"
+    file_path = f"{log_dir}/dev.log"
 
     _handler = TextFileLogHandler(file_name=file_path, buffer_size=buffer_size)
     _handler.setFormatter(_formatter)
@@ -50,7 +50,7 @@ def get_logger_prod(log_dir: str, buffer_size: int = 10) -> logging.Logger:
     _formatter = logging.Formatter(
         '[%(asctime)s - %(levelname)s - %(processName)s: %(process)d - %(threadName)s: %(thread)d] - %(filename)s->%(funcName)s():Line %(lineno)d - "%(message)s"\n'
     )
-    file_path = f"{log_dir}/{get_server_date()}.txt"
+    file_path = f"{log_dir}/{get_server_date()}.log"
     _handler = TextFileLogHandler(file_name=file_path, buffer_size=buffer_size)
 
     logging.Formatter.converter = (

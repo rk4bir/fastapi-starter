@@ -1,3 +1,6 @@
 uvicorn[standard]
-tox
+pytest
+pytest-cov
+coverage-badge
+pre-commit
 -e .

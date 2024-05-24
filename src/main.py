@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.config import logger, ALLOWED_ORIGINS
+from src.config import ALLOWED_ORIGINS
 from src.core.router import core_router
 
 app: FastAPI = FastAPI()

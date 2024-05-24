@@ -4,38 +4,6 @@
 ## FastAPI_Starter
 
 > FastAPI starter project
-
-Project structure
-```md
-.
-├── LICENSE
-├── MANIFEST.in
-├── README.md
-├── pyproject.toml
-├── pytest.ini
-├── requirements
-│   ├── base.txt
-│   ├── dev.txt
-│   └── prod.txt
-├── requirements-dev.txt
-├── requirements.txt
-├── setup.cfg
-├── setup.py
-├── src
-│   ├── __init__.py
-│   ├── _logger.py
-│   ├── config.py
-│   ├── config_dev.py
-│   ├── core
-│   │   ├── __init__.py
-│   │   ├── deps.py
-│   │   ├── router.py
-│   │   ├── schemas.py
-│   │   └── utils.py
-│   ├── database.py
-│   └── main.py
-└── tox.ini
-```
 Run the local development server
 
 ```bash

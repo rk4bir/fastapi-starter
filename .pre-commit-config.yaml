@@ -36,3 +36,12 @@ repos:
         language_version: python3.10
         language: python
         entry: flake8 src/
+  - repo: local
+    hooks:
+      - id: update-coverage-badge
+        name: update-coverage-badge
+        entry: bash
+        args:
+          - ./pre-commit.sh
+        language: system
+        pass_filenames: false

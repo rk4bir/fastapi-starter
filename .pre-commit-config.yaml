@@ -4,6 +4,15 @@ default_language_version:
   python: python3.10
 
 repos:
+  - repo: local
+    hooks:
+      - id: update-coverage-badge
+        name: update-coverage-badge
+        entry: bash
+        args:
+          - ./pre-commit.sh
+        language: system
+        pass_filenames: false
   - repo: https://github.com/psf/black
     rev: 24.4.2
     hooks:
@@ -36,12 +45,3 @@ repos:
         language_version: python3.10
         language: python
         entry: flake8 src/
-  - repo: local
-    hooks:
-      - id: update-coverage-badge
-        name: update-coverage-badge
-        entry: bash
-        args:
-          - ./pre-commit.sh
-        language: system
-        pass_filenames: false
